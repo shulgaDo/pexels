@@ -9,14 +9,14 @@ button{
 
 
 .container{
-    background-color: rgb(218, 187, 187);
+    background-color: rgb(255, 251, 251);
     height: 1000px;
 }
 
 
 .top-container{
     background-color: rgb(255, 251, 251);
-    height: 78px;
+    height: 78px;                                                                                                
 }
 
 .title-font{
@@ -172,13 +172,22 @@ button{
     position:absolute;
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: white;
     margin-top: 13px;
     margin-left: -91px;
     height: 510px;
     width: 219px;
     border-radius: 16px;
     gap: 3px;
+    display: none;
+}
+
+.other-wapper:hover .other-menu {
+    display: block;
+}
+
+.other-menu button:hover{
+    background-color: rgb(244, 244, 240);
 }
 
 .other-menu button:first-child{
@@ -195,12 +204,99 @@ button{
     font-size: 16.8px;
     text-align: left;
     padding: 8px 12px;
+    background-color: white;
 }
 
 
 
-.other-list{
-    visibility: hidden;
+.language-btn{
+    margin-top: 28px;
+    border-top:1px dashed #ccc;
+    border-bottom:1px dashed #ccc;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
+
+.language-btn i{
+    margin-right: 5px;
+}
+
+.other-icons{
+    display: flex;
+    gap:10px;
+    align-items: center;
+    margin-top: 14px;
+    margin-left: 20px;
+}
+
+.other-icons button{
+    width: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    position: relative;
+}
+
+.other-icons button::after{
+    content: attr(data-name);
+    position:absolute;
+    bottom: -40%;
+    left: 50%;
+
+    background: white;
+    color:black;
+    height: 20px;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-align: center;
+    transform: translateX(-50%);
+    border:1px solid #333;
+
+    display: flex;              /* 🔥关键 */
+    align-items: center;        /* 垂直居中 */
+    justify-content: center;    /* 水平居中 */
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.other-icons button:has(i:hover)::after {
+    opacity: 1;
+}
+
+.other-icons i{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 20px;
+}
+
+
+
+.fa-camera {
+    transform: translateY(-6px);
+}
+
+.other-icons button:hover{
+    background: none;
+    color: inherit;
+    border: none;
+}
+
+.other-icons button:hover i {
+    color: #aaa; /* hover变浅 */
+}
+
+
+
 
 
